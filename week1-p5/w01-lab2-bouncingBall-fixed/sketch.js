@@ -1,3 +1,8 @@
+// IMA NYU Shanghai
+// The Nature of Code
+// MOQN
+// Feb 10 2017
+
 var x, y;
 var xspeed, yspeed;
 var gravity;
