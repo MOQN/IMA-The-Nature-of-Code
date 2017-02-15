@@ -8,16 +8,17 @@ var img;
 function setup() {
   createCanvas(600, 600);
   noStroke();
-  img = loadImage('image-large.png');
   print("A");
+  img = loadImage('image-large.png');
+  print("B");
 }
 
 function draw() {
   background(0);
   
-  print("B");
+  print("C");
   if (img.width > 1) {
-    print("C");
+    print("D");
     noLoop();
   }
   image(img,0,0,width,height);

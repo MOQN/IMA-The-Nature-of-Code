@@ -27,4 +27,3 @@ function draw() {
   }
   image(img,0,0,width,height);
 }
-
