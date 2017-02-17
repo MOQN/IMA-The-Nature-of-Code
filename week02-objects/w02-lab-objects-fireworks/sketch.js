@@ -6,8 +6,6 @@
 
 var NUM_OF_CIRCLES = 150;
 var circles = [];
-var gravity;
-
 
 function setup() {
   createCanvas(600, 600);
@@ -15,7 +13,6 @@ function setup() {
   for (var i = 0; i < NUM_OF_CIRCLES; i++) {
     circles.push(new Circle(width / 2, height, 0, -12));
   }
-  gravity = 0.15;
 }
 
 
@@ -23,8 +20,6 @@ function draw() {
   background(0, 30);
 
   for (var i = 0; i < circles.length; i++) {
-    circles[i].move();
-    //circles[i].applyGravity(gravity);
     circles[i].run();
   }
 }

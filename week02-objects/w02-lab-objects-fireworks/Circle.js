@@ -1,6 +1,6 @@
 "use strict";
 
-// object: Circle
+
 class Circle {
   constructor(x, y, xspd, yspd) {
     this.x = x;
@@ -21,11 +21,12 @@ class Circle {
     this.yspeed += g;
   }
   explode() {
-    this.xspeed = random(-3, 3)*5;
-    this.yspeed = random(-3, 3)*5;
+    this.xspeed = random(-3, 3) * 5;
+    this.yspeed = random(-3, 3) * 5;
     this.isExploded = true;
   }
   run() {
+    this.move();
     if (this.isExploded) {
       if (this.interval > 0) {
         this.interval--;
@@ -39,8 +40,8 @@ class Circle {
         this.draw_scattered();
       }
     } else {
-      this.draw_normal();
       this.applyGravity(0.15);
+      this.draw_normal();
     }
   }
   draw_normal() {
@@ -51,13 +52,13 @@ class Circle {
     pop();
   }
   draw_scattered() {
-    this.distance+=1.4;
-    for (var angle=0; angle<360; angle+=72) {
+    this.distance += 1.4;
+    for (var angle = 0; angle < 360; angle += 72) {
       push();
       translate(this.x, this.y);
-      //rotate(frameCount*this.rotateSpd);
+      rotate(frameCount*this.rotateSpd);
       rotate(radians(angle));
-      fill(255-this.distance*5);
+      fill(255 - this.distance * 5);
       noStroke();
       ellipse(0, 0 + this.distance, this.dia, this.dia);
       pop();
