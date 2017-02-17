@@ -11,6 +11,8 @@ var circles = [];
 function setup() {
   createCanvas(600, 600);
   background(0);
+  //create Circle object of quantity of NUM_OF_CIRCLES
+  //and push them in the circles array
   for (var i = 0; i < NUM_OF_CIRCLES; i++) {
     circles.push(new Circle(width / 2, height, 0, -12));
   }

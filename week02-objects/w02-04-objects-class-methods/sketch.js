@@ -22,6 +22,8 @@ function draw() {
   background(0);
 
   for (var i = 0; i < circles.length; i++) {
+    //the updates to x and y position
+    //and displaying of circle is not directly done in the draw function anymore
     circles[i].move();
     circles[i].display();
   }
@@ -34,6 +36,8 @@ function Circle(x, y, dia, xspd, yspd) {
   this.xspd = xspd;
   this.yspd = yspd;
 
+  //Now the Circle class also maintains methods 
+  //that can be applied to each Circle object
   this.move = function() {
     this.x += this.xspd;
     this.y += this.yspd;

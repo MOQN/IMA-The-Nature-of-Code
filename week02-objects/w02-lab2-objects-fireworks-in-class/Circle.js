@@ -1,6 +1,10 @@
+//required to use the es6 model
 "use strict";
 
 class Circle {
+  //the constructor function can be used in form of
+  //new Circle(x, y, xspd, yspd)
+  //as it is in the setup function of sketch.js
   constructor(x, y, xspd, yspd) {
     this.x = x;
     this.y = y;
@@ -40,11 +44,16 @@ class Circle {
     this.distance += 0.6;
     for (var angle = 0; angle < 360; angle += 72) {
       push();
+      //to move the origin of the rotation 
+      //to the center of the cirlce
       translate(this.x, this.y);
-      // ***
+      //must pass radians in the rotate() function
+      //but the angle variable is in the degree form
+      //rotation to spin around the cirlces
       rotate(radians(frameCount));
-      // *** radians, but 360 => degree
+      //rotation to move the circle by degree angle
       rotate(radians(angle));
+      //fade out the color of circle gradually
       fill(255 - this.distance * 4);
       noStroke();
       ellipse(0, 0 + this.distance, this.dia, this.dia);
@@ -63,6 +72,7 @@ class Circle {
         this.displayNormal();
         break;
       case 1:
+        //check if the cirlce hasn't exploded yet
         if (this.isExploded == false) {
           this.explode();
         }
