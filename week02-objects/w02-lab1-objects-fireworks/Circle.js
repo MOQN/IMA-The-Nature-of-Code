@@ -56,7 +56,7 @@ class Circle {
     for (var angle = 0; angle < 360; angle += 72) {
       push();
       translate(this.x, this.y);
-      //rotate(frameCount*this.rotateSpd);
+      rotate(frameCount*this.rotateSpd);
       rotate(radians(angle));
       fill(255 - this.distance * 5);
       noStroke();
