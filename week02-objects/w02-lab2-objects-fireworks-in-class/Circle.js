@@ -1,19 +1,19 @@
-//required to use the es6 model
+// required to use the es6 model
 "use strict";
 
 class Circle {
-  //the constructor function can be used in form of
-  //new Circle(x, y, xspd, yspd)
-  //as it is in the setup function of sketch.js
+  // the constructor function can be used in form of
+  // new Circle(x, y, xspd, yspd)
+  // as it is in the setup function of sketch.js
   constructor(x, y, xspd, yspd) {
     this.x = x;
     this.y = y;
     this.dia = random(5, 10);
     this.xspeed = xspd;
     this.yspeed = yspd;
-    // make the circle scattered
+    // to make the circles scattered
     this.distance = 0;
-    // to control sequences
+    // to control the sequences
     this.seq = 0;
     this.isExploded = false;
   }
@@ -44,23 +44,25 @@ class Circle {
     this.distance += 0.6;
     for (var angle = 0; angle < 360; angle += 72) {
       push();
-      //to move the origin of the rotation 
-      //to the center of the cirlce
+      // move the origin of the rotation 
+      // to the center of the cirlce
       translate(this.x, this.y);
-      //must pass radians in the rotate() function
-      //but the angle variable is in the degree form
-      //rotation to spin around the cirlces
+      // must pass radians in the rotate() function
+      // but the angle variable is in the degree form
+      // rotation to spin around the cirlces
       rotate(radians(frameCount));
-      //rotation to move the circle by degree angle
+      // rotation to move the circle by degree angle
       rotate(radians(angle));
-      //fade out the color of circle gradually
+      // fade out the color of circle gradually
       fill(255 - this.distance * 4);
       noStroke();
       ellipse(0, 0 + this.distance, this.dia, this.dia);
-      // extra graphics. try out!
-      //ellipse(0, 0, 5, 5);
-      //stroke(255 - this.distance * 4);
-      //line(0,0, 0, 0 + this.distance);
+      // extra graphics. Try out!
+      /*
+      ellipse(0, 0, 5, 5);
+      stroke(255 - this.distance * 4);
+      line(0,0, 0, 0 + this.distance);
+      */
       pop();
     }
   }
@@ -72,7 +74,7 @@ class Circle {
         this.displayNormal();
         break;
       case 1:
-        //check if the cirlce hasn't exploded yet
+        // check if the cirlce hasn't exploded yet
         if (this.isExploded == false) {
           this.explode();
         }
@@ -81,7 +83,8 @@ class Circle {
         this.applyGravity(0.15);
         this.displayNormal();
         break;
-      default: // anything else except for 0 and 1
+      // any other cases, except for 0 and 1
+      default: 
         this.move();
         this.reduceSpeed(0.7);
         this.displayAfterExp();

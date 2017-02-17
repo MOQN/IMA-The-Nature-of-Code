@@ -11,8 +11,8 @@ var circles = [];
 function setup() {
   createCanvas(600, 600);
   background(0);
-  //create Circle object of quantity of NUM_OF_CIRCLES
-  //and push them in the circles array
+  // create Circle object of quantity of NUM_OF_CIRCLES
+  // and push them in the circles array
   for (var i = 0; i < NUM_OF_CIRCLES; i++) {
     circles.push(new Circle(width / 2, height, 0, -12));
   }
@@ -20,7 +20,7 @@ function setup() {
 
 
 function draw() {
-  // *** transparency to create a trail
+  // add transparency to create a trail
   background(0, 30);
   for (var i = 0; i < circles.length; i++) {
     circles[i].run();
