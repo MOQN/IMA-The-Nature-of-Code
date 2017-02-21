@@ -13,7 +13,7 @@ function setup() {
   var vector1 = createVector(4, 5);
   var vector2 = createVector(3, 1);
 
-  // display Vetices
+  // display vectors
   background(0);
   drawGrid();
 

@@ -10,7 +10,7 @@ function setup() {
   createCanvas(600, 600);
   currVector = createVector(0, 0);
 
-  // display Vetices
+  // display vectors
   background(0);
   drawGrid();
 
