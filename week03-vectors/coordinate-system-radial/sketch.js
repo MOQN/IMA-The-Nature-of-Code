@@ -13,9 +13,6 @@ function draw() {
   translate(width / 2, height / 2);
   drawCoordSystem(color(255, 0, 0, 150));
 
-
-
-
   drawCircle(PI / 4, 200); // drawCircle(angle, radialDistance);
 
   // random circles. compare between two
