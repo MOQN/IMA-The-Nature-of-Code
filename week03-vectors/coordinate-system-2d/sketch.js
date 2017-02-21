@@ -3,12 +3,14 @@
 // MOQN
 // Feb 21 2017
 
+
 function setup() {
   createCanvas(600,600);
 }
 
 function draw() {
   background(0);
+  
   push();
   translate(width/2,height/2);
   rotate(frameCount*0.05);
@@ -17,7 +19,7 @@ function draw() {
   drawCoordSystem(color(255,255,0,150));
   pop();
   
-  drawCoordSystem(color(0,0,255));
+  drawCoordSystem(color(0,0,255,200));
 }
 
 function drawCoordSystem(c) {

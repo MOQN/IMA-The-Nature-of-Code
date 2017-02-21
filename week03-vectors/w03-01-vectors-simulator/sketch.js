@@ -14,10 +14,11 @@ function setup() {
   background(0);
   drawGrid();
 
-  addVector(4, 0);
-  addVector(2, 2);
-  divVector(2);
-
+  addVector(4, 1);
+  addVector(1, 2);
+  subVector(3, 1);
+  multVector(2);
+  
   drawSumVector();
 }
 
