@@ -17,28 +17,26 @@ function draw() {
   vector1 = createVector(width / 2, height / 2);
   vector2 = createVector(mouseX, mouseY);
 
-  ellipse(vector1.x, vector1.y, 10, 10);
+  ellipse(vector1.x, vector1.y, 3, 3);
   ellipse(vector2.x, vector2.y, 10, 10);
 
   var vector3 = p5.Vector.sub(vector2, vector1);
   var magitude = vector3.mag();
+  // check the function magSq() as well.
+  // https://p5js.org/reference/#/p5.Vector/magSq
   
   // let's visualize vector3!
   push();
   translate(vector1.x, vector1.y);
   line(0, 0, vector3.x, vector3.y);
-  text(round(magitude), vector3.x+10, vector3.y);
+  text("mag() = " + round(magitude), vector3.x+10, vector3.y);
   pop();
   
   // we also have dist() function
   var distance = dist(vector1.x, vector1.y, vector2.x, vector2.y);
-  text(round(distance), 20, 20);
+  text("dist() = " + round(distance), 20, 20);
   
   // vector has dist() function as well. I know this is confusing :|
   print(vector1.dist(vector2)); // this won't change the vector1 values.
-  printVector(vector1);
-}
-
-function printVector(v) {
-  print("(" + v.x + ", " + v.y + ")");
+  print(vector1.toString());
 }

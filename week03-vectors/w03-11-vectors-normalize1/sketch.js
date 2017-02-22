@@ -16,7 +16,8 @@ function draw() {
   background(0);
   vector = createVector(mouseX, mouseY);
   
-  vector.limit(350); //constrain the magnitude
+  vector.normalize(); //change the magnitude 1 (Unit Vector)
+  vector.mult(300);
 
   ellipse(0, 0, 10, 10);
   ellipse(vector.x, vector.y, 10, 10);
@@ -25,5 +26,5 @@ function draw() {
   
   // let's visualize the vector!
   line(0, 0, vector.x, vector.y);
-  text(round(magitude), vector.x+10, vector.y);
+  text("1 x " + round(magitude), vector.x+10, vector.y);
 }

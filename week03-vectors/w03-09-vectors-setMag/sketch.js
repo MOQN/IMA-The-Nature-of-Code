@@ -16,7 +16,7 @@ function draw() {
   background(0);
   vector = createVector(mouseX, mouseY);
   
-  vector.limit(350); //constrain the magnitude
+  vector.setMag(200); //gives a fixed magnitude
 
   ellipse(0, 0, 10, 10);
   ellipse(vector.x, vector.y, 10, 10);
