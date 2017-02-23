@@ -14,7 +14,8 @@ function draw() {
   // update velocity
   mouseVec = createVector(mouseX, mouseY);
   vel = p5.Vector.sub(mouseVec, centerVec);
-  //vel.limit(50);
+  
+  vel.limit(50);
   //vel.setMag(50);
   //vel.normalize();
   //vel.mult(30);
