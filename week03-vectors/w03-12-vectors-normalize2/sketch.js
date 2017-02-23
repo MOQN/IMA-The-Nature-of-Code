@@ -33,6 +33,5 @@ function draw() {
   ellipse(vector.x, vector.y, 10, 10);
   stroke(255);
   line(0, 0, vector.x, vector.y);
-  
   text("1 x " + round(magitude), vector.x + 10, vector.y);
 }
