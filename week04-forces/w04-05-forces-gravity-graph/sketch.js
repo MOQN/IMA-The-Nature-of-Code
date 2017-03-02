@@ -33,9 +33,8 @@ function draw() {
       dots.splice(i, 1);
     }
   }
-  fill(255);
-  text( dots.length, 10 ,20);
   
+  // vector
   p.displayVelocity();
 }
 
