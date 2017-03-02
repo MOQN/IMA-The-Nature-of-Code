@@ -30,21 +30,21 @@ class Particle {
     if (this.pos.x < 0) {
       this.pos.x = 0;
       this.vel.x = -this.vel.x;
-      this.vel.mult(1.5);
+      this.vel.mult(1.5); // ***
     } else if (this.pos.x > width) {
       this.pos.x = width;
       this.vel.x = -this.vel.x;
-      this.vel.mult(1.5);
+      this.vel.mult(1.5); // ***
     }
     // y
     if (this.pos.y < 0) {
       this.pos.y = 0;
       this.vel.y = -this.vel.y;
-      this.vel.mult(0.7);
+      this.vel.mult(0.7); // ***
     } else if (this.pos.y > height) {
       this.pos.y = height;
       this.vel.y = -this.vel.y;
-      this.vel.mult(0.7);
+      this.vel.mult(0.7); // ***
     }
   }
 }

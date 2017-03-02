@@ -9,7 +9,6 @@ function setup() {
   particles.push(new Particle(100, height / 2));
   particles.push(new Particle(250, height / 2));
   particles.push(new Particle(400, height / 2));
-
 }
 
 
