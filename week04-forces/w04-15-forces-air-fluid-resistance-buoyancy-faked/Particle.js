@@ -6,7 +6,7 @@ class Particle {
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
     this.dia = 5;
-    this.mass = random(1, 20); // mass is added here!
+    this.mass = random(1,20); // mass is added here!
   }
   applyForce(f) {
     f.div(this.mass);
@@ -22,7 +22,7 @@ class Particle {
     translate(this.pos.x, this.pos.y);
     noStroke();
     fill(255);
-    ellipse(0, 0, this.dia * this.mass, this.dia * this.mass);
+    ellipse(0, 0, this.dia*this.mass, this.dia*this.mass);
     pop();
   }
   checkBoundaries() {

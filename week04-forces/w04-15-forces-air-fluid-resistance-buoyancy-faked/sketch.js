@@ -6,7 +6,7 @@ var particles = [];
 
 
 function setup() {
-  createCanvas(500, 700);
+  createCanvas(500, 600);
   background(0);
 
   particles.push(new Particle(100, 0));

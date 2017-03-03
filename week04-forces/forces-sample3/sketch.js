@@ -1,16 +1,38 @@
 "use strict";
 
+
+var particles = [];
+
+
+function setup() {
+  createCanvas(500, 600);
+  background(0);
+
+  particles.push(new Particle(100, height / 2));
+  particles.push(new Particle(250, height / 2));
+  particles.push(new Particle(400, height / 2));
+}
+
+function draw() {
+  background(0);
+  for (var i = 0; i < particles.length; i++) {
+    var p = particles[i];
+    
+    p.checkBoundaries();
+    p.update();
+    p.display();
+  }
+}
+
+
+// __________________________________________________________________________
+
 class Particle {
-  constructor(x, y) {
+    constructor(x, y) {
     this.pos = createVector(x, y);
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
-    this.dia = 5;
-    this.mass = random(1,20); // mass is added here!
-  }
-  applyForce(f) {
-    f.div(this.mass);
-    this.acc.add(f);
+    this.dia = 30;
   }
   update() {
     this.vel.add(this.acc); // vel = vel + acc;
@@ -22,7 +44,7 @@ class Particle {
     translate(this.pos.x, this.pos.y);
     noStroke();
     fill(255);
-    ellipse(0, 0, this.dia*this.mass, this.dia*this.mass);
+    ellipse(0, 0, this.dia, this.dia);
     pop();
   }
   checkBoundaries() {
@@ -30,21 +52,17 @@ class Particle {
     if (this.pos.x < 0) {
       this.pos.x = 0;
       this.vel.x = -this.vel.x;
-      this.vel.mult(1.5);
     } else if (this.pos.x > width) {
       this.pos.x = width;
       this.vel.x = -this.vel.x;
-      this.vel.mult(1.5);
     }
     // y
     if (this.pos.y < 0) {
       this.pos.y = 0;
       this.vel.y = -this.vel.y;
-      this.vel.mult(0.7);
     } else if (this.pos.y > height) {
       this.pos.y = height;
       this.vel.y = -this.vel.y;
-      this.vel.mult(0.7);
     }
   }
 }

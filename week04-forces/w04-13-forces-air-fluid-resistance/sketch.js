@@ -9,7 +9,7 @@ var particles = [];
 
 
 function setup() {
-  createCanvas(500, 700);
+  createCanvas(500, 600);
   background(0);
 
   particles.push(new Particle(100, 0));
@@ -22,7 +22,7 @@ function draw() {
   background(0);
 
   // water
-  fill(0, 0, 100);
+  fill(0, 0, 70);
   rect(0, WATER_SURFACE, width, height - WATER_SURFACE);
 
 
@@ -34,25 +34,24 @@ function draw() {
     var gravity = createVector(0, GRAVITY_MAGNITUDE * p.mass);
     p.applyForce(gravity);
 
-    var friction = p5.Vector.mult(p.vel, -1);
-    friction.normalize();
-
     // resistance
+    var resistance = p5.Vector.mult(p.vel, -1);
+    resistance.normalize();
     var speed = p.vel.mag();
     if (p.pos.y < WATER_SURFACE) {
       // air resistance
-      var resistance = speed * speed * AIR_RESISTANCE_COEFFICIENT;
-      friction.mult(resistance);
+      var magnitude = speed * speed * AIR_RESISTANCE_COEFFICIENT;
+      resistance.mult(magnitude);
     } else {
       // liquid resistance
-      var resistance = speed * speed * WATER_RESISTANCE_COEFFICIENT;
-      friction.mult(resistance);
+      var magnitude = speed * speed * WATER_RESISTANCE_COEFFICIENT;
+      resistance.mult(magnitude);
     }
-    p.applyForce(friction);
+    p.applyForce(resistance);
 
     // update
     p.update();
-    
+
     // display
     p.display();
   }

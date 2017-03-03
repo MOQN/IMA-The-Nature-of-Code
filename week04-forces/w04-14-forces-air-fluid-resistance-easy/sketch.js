@@ -6,7 +6,7 @@ var particles = [];
 
 
 function setup() {
-  createCanvas(500, 700);
+  createCanvas(500, 600);
   background(0);
 
   particles.push(new Particle(100, 0));
@@ -31,22 +31,21 @@ function draw() {
     var gravity = createVector(0, GRAVITY_MAGNITUDE * p.mass);
     p.applyForce(gravity);
 
-
-    var friction = p5.Vector.mult(p.vel, -1);
-    //friction.normalize();
     // resistance
+    var resistance = p5.Vector.mult(p.vel, -1);
+    //resistance.normalize();
     if (p.pos.y < WATER_SURFACE) {
       // air resistance
-      friction.mult(0.1);
+      resistance.mult(0.1);
     } else {
       // liquid resistance
-      friction.mult(0.95);
+      resistance.mult(0.85);
     }
-    p.applyForce(friction);
+    p.applyForce(resistance);
 
     // update
     p.update();
-    
+
     // display
     p.display();
   }

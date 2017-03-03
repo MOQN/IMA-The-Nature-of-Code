@@ -13,7 +13,7 @@ function setup() {
 
   // create a particle and change its velocity
   p = new Particle(0, 30);
-  p.vel = createVector(20, 0.0);
+  p.vel = createVector(20, 0.1);
 }
 
 function draw() {
