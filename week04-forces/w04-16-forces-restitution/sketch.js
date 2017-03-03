@@ -28,8 +28,9 @@ function draw() {
     p.applyForce(gravity);
     
     var friction = p5.Vector.mult(p.vel, -1);
-    //friction.normalize();
+    friction.normalize();
     friction.mult(FRICTION_MAGNITUDE);
+    friction.limit(p.vel.mag());
     p.applyForce(friction);
     
     p.update();

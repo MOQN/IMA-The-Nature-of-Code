@@ -16,9 +16,14 @@ function draw() {
   for (var i = 0; i < particles.length; i++) {
     var p = particles[i];
     
-    // let's do something here :D
+    var center = createVector(width/2, height/2);
+    var gravity = p5.Vector.sub(center, p.pos);
+    var cGravity = 0.5;
+    gravity.normalize();
+    gravity.mult(cGravity * p.mass);
+    p.applyForce(gravity);
     
-    p.checkBoundaries();
+    //p.checkBoundaries();
     p.update();
     p.display();
   }

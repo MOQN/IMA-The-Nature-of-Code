@@ -6,7 +6,7 @@ class Particle {
     this.vel = createVector(random(-20,20), 0.1);
     this.acc = createVector(0, 0);
     this.dia = 5;
-    this.mass = random(1,20); // mass is added here!
+    this.mass = random(1,20);
   }
   applyForce(f) {
     f.div(this.mass);
@@ -30,21 +30,21 @@ class Particle {
     if (this.pos.x < 0) {
       this.pos.x = 0;
       this.vel.x = -this.vel.x;
-      this.vel.mult(1.5); // ***
+      this.vel.mult(1.5); // *** restitution ***
     } else if (this.pos.x > width) {
       this.pos.x = width;
       this.vel.x = -this.vel.x;
-      this.vel.mult(1.5); // ***
+      this.vel.mult(1.5); // *** restitution ***
     }
     // y
     if (this.pos.y < 0) {
       this.pos.y = 0;
       this.vel.y = -this.vel.y;
-      this.vel.mult(0.7); // ***
+      this.vel.mult(0.7); // *** restitution ***
     } else if (this.pos.y > height) {
       this.pos.y = height;
       this.vel.y = -this.vel.y;
-      this.vel.mult(0.7); // ***
+      this.vel.mult(0.7); // *** restitution ***
     }
   }
 }
