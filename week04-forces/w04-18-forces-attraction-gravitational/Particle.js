@@ -18,7 +18,7 @@ class Particle {
     var force = p5.Vector.sub(other.pos, this.pos);
     force.normalize();
     force.mult(magnitude);
-    this.acc.add(force);
+    this.applyForce(force);
   }
   update() {
     this.vel.add(this.acc); // vel = vel + acc;

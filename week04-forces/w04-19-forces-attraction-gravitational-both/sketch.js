@@ -1,4 +1,4 @@
-var C_GRAVITY = 5;
+var C_GRAVITY = 20;
 var p1, p2;
 
 

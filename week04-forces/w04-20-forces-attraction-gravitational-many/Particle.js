@@ -18,7 +18,7 @@ class Particle {
     var force = p5.Vector.sub(other.pos, this.pos);
     force.normalize();
     force.mult(magnitude);
-    this.acc.add(force);
+    this.applyForce(force);
   }
   checkEdges() {
     if (this.pos.x < 0) {

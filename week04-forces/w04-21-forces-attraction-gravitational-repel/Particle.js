@@ -24,7 +24,7 @@ class Particle {
       force.mult(-1); // to flip
       force.mult(30); // to add more strength
     }
-    this.acc.add(force);
+    this.applyForce(force);
     this.acc.limit(10);
     
   }

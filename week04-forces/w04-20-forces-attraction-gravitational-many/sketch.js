@@ -1,4 +1,4 @@
-var C_GRAVITY = 1;
+var C_GRAVITY = 5;
 var particles = [];
 
 
