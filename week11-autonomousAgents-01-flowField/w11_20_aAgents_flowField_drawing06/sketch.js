@@ -5,7 +5,8 @@ var rows, cols;
 var vehicles = [];
 
 function setup() {
-  createCanvas(1000, 600);
+  //createCanvas(1000, 600);
+  createCanvas(windowWidth, windowHeight);
   background(0);
   rows = floor(width / RESOLUTION);
   cols = floor(height / RESOLUTION);
