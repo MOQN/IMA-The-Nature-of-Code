@@ -16,11 +16,11 @@ function draw() {
   drawCircle(PI / 4, 200); // drawCircle(angle, radialDistance);
 
   // random circles. compare between two
-  /*
+  
   for (var i = 0; i < 500; i++) {
     drawCircle(random(PI*2), random(200));
   }
-  */
+  
   /*
   for (var i = 0; i < 500; i++) {
     var x = random(-200, 200);
@@ -28,6 +28,7 @@ function draw() {
     ellipse(x, y, 10, 10);
   }
   */
+  
 }
 
 function drawCircle(angle, rDist) {

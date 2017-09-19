@@ -14,9 +14,9 @@ function setup() {
   background(0);
   drawGrid();
 
-  addVector(4, 1);
-  addVector(-1, 3);
-  addVector(3, 2);
+  addVector(4, 4);
+  subVector(1, 3);
+  //addVector(3, 2);
   //subVector(1,1);
   //multVector(2);
   
