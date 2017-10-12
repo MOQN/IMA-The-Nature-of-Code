@@ -6,7 +6,7 @@ function setup() {
   background(0);
 
   p1 = new Particle(100, 150, 5); // (x,y,mass)
-  p1.vel.y = 10;
+  p1.vel.y = 5;
   p2 = new Particle(width/2, height/2, 15); // (x,y,mass)
 
 }

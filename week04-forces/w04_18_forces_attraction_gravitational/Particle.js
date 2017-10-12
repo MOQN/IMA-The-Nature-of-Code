@@ -5,8 +5,9 @@ class Particle {
     this.pos = createVector(x, y);
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
-    this.rad = 5;
     this.mass = m;
+    this.rad = this.mass * 5;
+    
   }
   applyForce(f) {
     f.div(this.mass);
@@ -30,7 +31,7 @@ class Particle {
     translate(this.pos.x, this.pos.y);
     stroke(255);
     fill(255, 100);
-    ellipse(0, 0, this.rad * 2 * this.mass, this.rad * 2 * this.mass);
+    ellipse(0, 0, this.rad * 2, this.rad * 2);
     pop();
   }
 }

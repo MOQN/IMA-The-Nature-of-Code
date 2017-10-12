@@ -5,29 +5,46 @@ class Particle {
     this.pos = createVector(x, y);
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
-    this.rad = 5;
     this.mass = m;
+    this.rad = this.mass * 5;
   }
   applyForce(f) {
     f.div(this.mass);
     this.acc.add(f);
   }
   applyAttraction(other) {
+    var distance = this.pos.dist(other.pos);
+    var magnitude = (C_GRAVITY * this.mass * other.mass) / (distance * distance);
     var force = p5.Vector.sub(other.pos, this.pos);
-    force.mult(0.005);
-    this.acc.add(force);
+    force.normalize();
+    force.mult(magnitude);
+    this.applyForce(force);
+  }
+  checkEdges() {
+    if (this.pos.x < 0) {
+      this.pos.x = width;
+    } else if (this.pos.x > width) {
+      this.pos.x = 0;
+    }
+    if (this.pos.y < 0) {
+      this.pos.y = height;
+    } else if (this.pos.y > height) {
+      this.pos.y = 0;
+    }
   }
   update() {
     this.vel.add(this.acc); // vel = vel + acc;
     this.pos.add(this.vel); // pos = pos + vel;
     this.acc.mult(0); // acceleration has to be reset after being applied! ***
+    //
+    this.vel.limit(5); // let's not make them too fast..
   }
   display() {
     push();
     translate(this.pos.x, this.pos.y);
     stroke(255);
     fill(255, 100);
-    ellipse(0, 0, this.rad * 2 * this.mass, this.rad * 2 * this.mass);
+    ellipse(0, 0, this.rad * 2, this.rad * 2);
     pop();
   }
 }

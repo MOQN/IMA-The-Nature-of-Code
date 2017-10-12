@@ -6,7 +6,7 @@ class Particle {
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
     this.mass = m;
-    this.rad = 5 * m;
+    this.rad = this.mass * 5;
   }
   applyForce(f) {
     f.div(this.mass);
@@ -44,6 +44,8 @@ class Particle {
     this.vel.add(this.acc); // vel = vel + acc;
     this.pos.add(this.vel); // pos = pos + vel;
     this.acc.mult(0); // acceleration has to be reset after being applied! ***
+    //
+    this.vel.limit(20); // let's not make them too fast..
   }
   display() {
     push();
