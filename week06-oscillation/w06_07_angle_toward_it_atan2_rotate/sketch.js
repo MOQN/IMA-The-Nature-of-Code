@@ -17,7 +17,7 @@ function draw() {
   var mouseVector = createVector(mouseX, mouseY);
 
   var angle = atan2(mouseVector.y - centerVector.y, mouseVector.x - centerVector.x);
-
+  
   fill(255);
   stroke(255);
   line(centerVector.x, centerVector.y, mouseVector.x, mouseVector.y);

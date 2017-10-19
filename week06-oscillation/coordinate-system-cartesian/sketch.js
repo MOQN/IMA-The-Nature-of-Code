@@ -15,7 +15,7 @@ function draw() {
   translate(width/2,height/2);
   rotate(frameCount*0.05);
   fill(255);
-  ellipse(frameCount*0.5,0,30,30);
+  ellipse(200,0,30,30);
   drawCoordSystem(color(255,255,0,150));
   pop();
   

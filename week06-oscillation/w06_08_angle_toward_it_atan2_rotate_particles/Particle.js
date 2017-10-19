@@ -7,6 +7,7 @@ class Particle {
     this.acc = createVector(0, 0);
     this.mass = 1;
     this.rad = 10 * this.mass;
+    this.angle = 0;
   }
   applyForce(f) {
     f.div(this.mass);
@@ -21,6 +22,8 @@ class Particle {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
     this.acc.mult(0);
+    
+    this.angle = atan2(mouseY - this.pos.y, mouseX - this.pos.x);
   }
   display() {
     push();
@@ -31,11 +34,9 @@ class Particle {
     pop();
   }
   displayTriangle() {
-    //var angle = atan2(mouseY - this.pos.y, mouseX - this.pos.x);
-    
     push();
     translate(this.pos.x, this.pos.y);
-    //rotate(angle);
+    //rotate(this.angle);
     stroke(255);
     fill(255, 100);
     triangle(0, 0, -30, -10, -30, 10);

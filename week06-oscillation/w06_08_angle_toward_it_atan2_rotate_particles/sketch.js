@@ -16,7 +16,7 @@ function draw() {
     particles[i].applyAttraction(mouseVector);
     particles[i].update();
     particles[i].vel.mult(0.98);
-    particles[i].display();
-    //particles[i].displayTriangle();
+    //particles[i].display();
+    particles[i].displayTriangle();
   }
 }
