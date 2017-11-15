@@ -25,7 +25,8 @@ class Ball {
     
     this.vel.mult(this.cDamping);
   }
-  applyForce(force) {
+  applyForce( f ) {
+    var force = f.copy();
     force.div(this.mass);
     this.acc.add(force);
   }
