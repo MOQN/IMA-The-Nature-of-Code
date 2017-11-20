@@ -6,8 +6,8 @@ var vehicles = [];
 
 function setup() {
   createCanvas(500, 600);
-  rows = floor(width / RESOLUTION);
-  cols = floor(height / RESOLUTION);
+  rows = ceil(width / RESOLUTION);
+  cols = ceil(height / RESOLUTION);
 
   for (var i = 0; i < 50; i++) {
     vehicles.push(new Vehicle(width/2, height/2));

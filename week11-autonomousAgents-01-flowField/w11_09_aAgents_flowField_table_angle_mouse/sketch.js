@@ -3,8 +3,8 @@ var rows, cols;
 
 function setup() {
   createCanvas(500, 600);
-  rows = floor(width / RESOLUTION);
-  cols = floor(height / RESOLUTION);
+  rows = ceil(width / RESOLUTION);
+  cols = ceil(height / RESOLUTION);
 }
 
 function draw() {

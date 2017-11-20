@@ -8,8 +8,8 @@ function setup() {
   //createCanvas(1000, 600);
   createCanvas(windowWidth, windowHeight);
   background(0);
-  rows = floor(width / RESOLUTION);
-  cols = floor(height / RESOLUTION);
+  rows = ceil(width / RESOLUTION);
+  cols = ceil(height / RESOLUTION);
 
   for (var i = 0; i < 500; i++) {
     vehicles.push(new Vehicle((i*4) % width, height/2));
