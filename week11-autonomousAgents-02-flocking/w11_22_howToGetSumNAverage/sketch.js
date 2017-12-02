@@ -1,15 +1,19 @@
-var numbers = [];
+var numbers = [1, 2, 3, 4, 5, 10, 15, 20, 34, 50, 32];
 
 
 function setup() {
-  var count = 0;
   var sum = 0;
-  for (var i = 0; i < 5; i++) {
-    numbers[i] = floor(random(10));
-    print(numbers[i]);
-    sum = sum + numbers[i];
-    count++;
+  var count = 0;
+  var avg = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 10) {
+      sum += numbers[i];
+      count++;
+    }
   }
-  var avg = sum/count;
-  print("avg: " + avg);
+  if (count > 0) {
+    avg = sum / count;
+  }
+
+  print(sum + "   " + avg);
 }

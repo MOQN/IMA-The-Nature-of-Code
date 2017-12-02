@@ -14,7 +14,7 @@ class Vehicle {
     this.detectVector = createVector();
     this.directionVector = createVector();
     this.predictDistance = 50;
-    this.detectRadius = 40;
+    this.detectRadius = 60;
   }
   update() {
     this.vel.add(this.acc);
