@@ -5,6 +5,13 @@ function setup() {
 function draw() {
   background(0);
   
+  orbitControl();
+  // manual 
+  // var rotX = map(mouseY, 0, height, -PI/4, PI/4);
+  // var rotY = map(mouseX, 0, width, -PI/2, PI/2);
+  // rotateX(rotX);
+  // rotateY(rotY);
+  
   rotateY(frameCount * 0.01);
   
   var resolution = 15;
