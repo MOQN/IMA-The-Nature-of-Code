@@ -1,7 +1,7 @@
 # The Nature of Code | IMA, NYU Shanghai | Spring 2020
 
 *“How can we capture the unpredictable evolutionary and emergent properties of nature in software? How can understanding the mathematical principles behind our physical world help us to create digital worlds?”*
-– Daniel Shiffman
+ – Daniel Shiffman
 
 The Nature of Code is an intermediate course designed based on Daniel Shiffman’s The Nature of Code course at NYU ITP and was adjusted for students of undergraduate studies. This course explores fundamentals of programming, such as Object-Oriented Programming, and application of simple principles of mathematics and physics in order to recreate natural behaviors in a digital environment.
 
@@ -20,7 +20,5 @@ Upon Completion of this Course, students will be able to:
 * create generative art by utilizing a combination of concepts discussed over the course.
 
 ## Instructor Information
-Name: Jung Hyun Moon
-Email: jh.moon@nyu.edu
-
-
+* Name: Jung Hyun Moon
+* Email: jh.moon@nyu.edu
