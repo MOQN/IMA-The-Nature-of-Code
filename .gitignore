@@ -1,4 +1,8 @@
+# files
 .DS_Store
 *.zip
 *.mov
-**/other/*
+*.mp4
+
+# folders
+**/other
