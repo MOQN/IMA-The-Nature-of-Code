@@ -19,11 +19,11 @@ function draw() {
   ellipse(0, 0, 10, 10);
   ellipse(vector.x, vector.y, 10, 10);
 
-  let magitude = vector.mag();
+  let magnitude = vector.mag();
   // check the function magSq() as well.
   // https://p5js.org/reference/#/p5.Vector/magSq
-  
+
   // let's visualize the vector!
   line(0, 0, vector.x, vector.y);
-  text(round(magitude), vector.x+10, vector.y);
+  text(round(magnitude), vector.x+10, vector.y);
 }

@@ -13,14 +13,14 @@ function draw() {
   translate(width / 2, height / 2);
   drawCoordSystem(color(255, 0, 0, 150));
 
-  drawCircle(PI / 4, 200); // drawCircle(angle, radialDistance);
+  drawCircle(200, PI/4); // drawCircle(radialDistance, angle);
 
   /*
   let polar = true; // change this value and compare between two
   if (polar) {
     // polar: angle, distance
     for (let i = 0; i < 500; i++) {
-      drawCircle(random(PI*2), random(200));
+      drawCircle(random(200), random(PI*2));
     }
   } else {
     // cartesian: x, y
@@ -33,7 +33,7 @@ function draw() {
   */
 }
 
-function drawCircle(angle, rDist) {
+function drawCircle(rDist, angle) {
   let x = cos(angle) * rDist;
   let y = sin(angle) * rDist;
 
