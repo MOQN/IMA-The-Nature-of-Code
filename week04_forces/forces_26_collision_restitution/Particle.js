@@ -12,8 +12,9 @@ class Particle {
     this.color = color(255);
   }
   applyForce(f) {
-    f.div(this.mass);
-    this.acc.add(f);
+    let force = f.copy();
+    force.div(this.mass); // *** mass!! ***
+    this.acc.add(force);
   }
   checkCollision(other) {
     let distance = this.pos.dist(other.pos);

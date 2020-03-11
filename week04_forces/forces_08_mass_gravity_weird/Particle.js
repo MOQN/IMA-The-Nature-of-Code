@@ -9,8 +9,9 @@ class Particle {
     this.mass = random(1,10); // *** mass is added here! ***
   }
   applyForce(f) {
-    f.div(this.mass); // *** mass ***
-    this.acc.add(f);
+    let force = f.copy();
+    force.div(this.mass); // *** mass!! ***
+    this.acc.add(force);
   }
   update() {
     this.vel.add(this.acc); // vel = vel + acc;

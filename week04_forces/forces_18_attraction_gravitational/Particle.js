@@ -7,11 +7,12 @@ class Particle {
     this.acc = createVector(0, 0);
     this.mass = m;
     this.rad = this.mass * 5;
-    
+
   }
   applyForce(f) {
-    f.div(this.mass);
-    this.acc.add(f);
+    let force = f.copy();
+    force.div(this.mass); // *** mass!! ***
+    this.acc.add(force);
   }
   applyAttraction(other) {
     let distance = this.pos.dist(other.pos);

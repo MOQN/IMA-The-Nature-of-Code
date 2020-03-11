@@ -75,8 +75,9 @@ class Particle {
       this.vel.y *= co_restitution;
     }
   }
-  applyForce(force) {
-    force.div(this.mass);
+  applyForce(f) {
+    let force = f.copy();
+    force.div(this.mass); // *** mass!! ***
     this.acc.add(force);
   }
   checkCollision(other) {
