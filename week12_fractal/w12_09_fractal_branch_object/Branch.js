@@ -8,11 +8,11 @@ class Branch {
   }
   display() {
     push();
-    
+
     stroke(255);
     strokeWeight(this.thickness);
     line(this.vecFrom.x, this.vecFrom.y, this.vecTo.x, this.vecTo.y);
-    
+
     pop();
   }
 }
